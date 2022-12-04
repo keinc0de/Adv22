@@ -54,6 +54,7 @@ def interseccion(lista=[[2, 8], [3, 7]]):
             bo = True
             break
     return bo
+    
 def cuantosInterseccion(lista):
     similares = []
     for pareja in lista:
@@ -62,10 +63,13 @@ def cuantosInterseccion(lista):
     #pprint(similares)
     return len(similares)
 
+def cuantosContiene2(lista):
+    return len([pareja for pareja in lista if contenido(pareja)])
 
 # DATOS
 lie = lee("dia4_ejemplo.txt")
 lid = lee("dia4_datos.txt")
+print(lie)
 print("CUANTOS:")
 # PARTE 1
 print(f"contenidos(ejemplo): {cuantosContiene(lie)}")
@@ -75,3 +79,6 @@ print(f"contenidos(datos): {cuantosContiene(lid)}")
 print(f"con interseccion(ejemplo): {cuantosInterseccion(lie)}")
 print(f"con interseccion(datos): {cuantosInterseccion(lid)}")
 
+print("Otros")
+print(cuantosContiene2(lie))
+print(cuantosContiene2(lid))
