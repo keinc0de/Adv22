@@ -1,12 +1,14 @@
-import txt
 from pprint import pprint
-lie = txt.lista_lineas("dia3_ejemplo.txt")
+
 orden = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
-lid = txt.lista_lineas("dia3_datos.txt")
+def lee(archivo):
+    with open(archivo, "r") as txt:
+        return [linea.replace("\n", "") for linea in txt.readlines()]
+
+lie = lee("dia3_ejemplo.txt")
+lid = lee("dia3_datos.txt")
 # pprint(lid)
 # pprint(lie)
-
-
 def sumaPorCompartimento(lista):
     suma = 0
     for productos in lista:
@@ -57,5 +59,5 @@ def sumaPC(li):
         i = orden.index(_)+1
         suma+=i
     return suma
-print(f"compartimento(ejemplo): {sumaPC(lie)}")
-print(f"compartimento(datos): {sumaPC(lid)}")
+# print(f"compartimento(ejemplo): {sumaPC(lie)}")
+# print(f"compartimento(datos): {sumaPC(lid)}")
